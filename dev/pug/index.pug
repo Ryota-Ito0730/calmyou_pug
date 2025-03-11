@@ -59,4 +59,32 @@ html(lang="ja")
       section#themes.row
         h2 Themes
         p.lead.side Calmyouでは癒しにつながる画像のジャンル(テーマ)を、現在、3種類ご用意しています。あなたにとってのお好みのテーマが見つかりますように。
+        .flex-box
+          -
+            const themeObj = [
+              {
+                title: "Flower",
+                link: "/player_flower",//- linkは現時点では仮置きとします
+                thumbnail: "/theme_cherry_blossom.webp",
+                lead:"美しさや華やかさ、時に儚さすら感じさせてくれる花は、様々な表現で私たちを魅了します。懸命に咲く、瞬間の芸術をご堪能ください。"
+              },
+              {
+                title: "Koyo",
+                link: "/player_koyo",
+                thumbnail: "/theme_koyo.webp",
+                lead:"秋の風物詩、紅葉は季節の移り変わりを暖かみのある表情で伝えてくれます。艶やかな情緒ある風景をお楽しみください。"
+              },
+              {
+                title: "Cat",
+                link: "/player_cat",
+                thumbnail: "/theme_cat.webp",
+                lead:"そのモフモフ感、自由な振る舞い、愛くるしさの化身ともいえる猫達。その可愛さや奔放さを目の前にしたら、悶えること間違いなしです。"
+              }
+            ];
+          each item in themeObj
+            .theme
+              a(href=item.link)
+                h3= item.title
+                img(src=item.thumbnail, alt="")
+                p.lead= item.lead
       | <!-- section#themes.row -->
