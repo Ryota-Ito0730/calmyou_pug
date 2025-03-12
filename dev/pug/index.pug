@@ -84,7 +84,44 @@ html(lang="ja")
           each item in themeObj
             .theme
               a(href=item.link)
-                h3= item.title
+                h3= item.title 
                 img(src=item.thumbnail, alt="")
-                p.lead= item.lead
+                p.lead= item.lead 
       | <!-- section#themes.row -->
+      section#information
+        h2 information
+        p.side Calmyouからのお知らせ
+        ul
+          -
+            const informationObj = [
+              {
+                year: "2020",
+                month: "10",
+                day: "26",
+                description: "オンラインフォトフレーム\"Calmyou\"がオープンしました。"
+              },
+              {
+                year: "2020",
+                month: "10",
+                day: "26",
+                description: "新しい追加テーマを現在準備中です。"
+              },
+              {
+                year: "2020",
+                month: "10",
+                day: "26",
+                description: "モバイル用テーマ表示画面の更新を予定しています。"
+              },
+              {
+                year: "2020",
+                month: "10",
+                day: "26",
+                description: "撮影した画像をオンラインフォトフレームにまとめてプレゼントできるように、新機能の追加を予定しています。"
+              },
+            ];
+          each item in informationObj
+            li
+              time(datetime=item.year+"-"+item.month+"-"+item.day) #{item.year}年#{item.month}月#{item.day}日
+              br
+              //- テキスト内の記号をエスケープさせない場合
+              | !{item.description} 
