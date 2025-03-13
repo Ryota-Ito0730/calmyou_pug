@@ -84,9 +84,10 @@ html(lang="ja")
           each item in themeObj
             .theme
               a(href=item.link)
-                h3= item.title 
+                h3= item.title
                 img(src=item.thumbnail, alt="")
-                p.lead= item.lead 
+                p.lead= item.lead
+
       | <!-- section#themes.row -->
       section#information
         h2 information
@@ -124,4 +125,28 @@ html(lang="ja")
               time(datetime=item.year+"-"+item.month+"-"+item.day) #{item.year}年#{item.month}月#{item.day}日
               br
               //- テキスト内の記号をエスケープさせない場合
-              | !{item.description} 
+              | !{item.description}
+      | <!-- section#information -->
+      footer
+        div.fkv_filter
+          nav.inner.side
+            ul
+              li Themes
+              li
+                ul
+                  li
+                    a(href="") 
+                    img(src="", alt="")
+                    span Flower
+                  li
+                    a(href="") 
+                    img(src="", alt="")
+                    span Koyo
+                  li
+                    a(href="") 
+                    img(src="", alt="")
+                    span Cat
+              li
+                a Contact
+              li
+                a Top
